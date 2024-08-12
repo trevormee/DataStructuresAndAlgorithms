@@ -7,11 +7,8 @@ class Node
         int data;
         Node* next;
         
-        // Default Constructor
-        Node() { data = 0; next = nullptr;};
-
-        // Count Num Nodes 
-        static int countNode(Node* head);
+        // Parametrized Constructor
+        Node(int newData) { data = newData; next = nullptr;};
 
 };
 #endif
