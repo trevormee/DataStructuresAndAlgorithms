@@ -32,8 +32,7 @@ class LinkedLists
         int SearchByValue(int value);
 
         // Main Loop to run Linked List operations
-        void LinkedListsMainLoop();
-        
+        void LinkedListsMainLoop();  
 };
 #endif
 

@@ -1,5 +1,11 @@
 #include "Headers/LinkedLists.hpp"
 
+/*
+    @brief Traverses through a linked list and output the data 
+           at each position
+
+    @param head: node
+*/
 void LinkedLists::Traversal(Node* head)
 {
      while (head != nullptr)
@@ -10,6 +16,11 @@ void LinkedLists::Traversal(Node* head)
     std::cout << std::endl;
 }
 
+/*
+    @brief Inserts a new node at beginning of linked list
+
+    @param value: data to be assoc. with new head node
+*/
 void LinkedLists::InsertAtHead(int value)
 {
     Node* newNode = new Node(value);
@@ -17,6 +28,12 @@ void LinkedLists::InsertAtHead(int value)
     head = newNode;
 }
 
+/*
+    @brief Inserts a new node at a desired position
+
+    @param value: data of the new node
+    @param pos: index to insert the new node
+*/
 void LinkedLists::Insert(int value, int pos)
 {
     if(pos < 1)
@@ -38,6 +55,9 @@ void LinkedLists::Insert(int value, int pos)
     temp->next = newNode;
 }
 
+/*
+    @brief Deletes the head node from a linked list
+*/
 void LinkedLists::DeleteAtHead()
 {
     if(!head){
@@ -49,6 +69,11 @@ void LinkedLists::DeleteAtHead()
     delete temp;
 }
 
+/*
+    @brief Delets a node from a linked list at a desired index
+
+    @param pos: index of the node to be deleted
+*/
 void LinkedLists::Delete(int pos)
 {
     if(pos < 1)
@@ -72,6 +97,13 @@ void LinkedLists::Delete(int pos)
     delete deletedNode;
 }
 
+/*
+    @brief Searches through a linked list
+
+    @param value: data of the node we are searching for
+
+    @returns position (index of node)
+*/
 int LinkedLists::SearchByValue(int value)
 {
     Node* temp = head;
@@ -90,9 +122,13 @@ int LinkedLists::SearchByValue(int value)
 
 }
 
-
+/*
+    @brief Sample program to test and display how various 
+           linked list operations work
+*/
 void LinkedLists::LinkedListsMainLoop()
 {
+    std::cout << "\n------------------------------------------" <<std::endl;
     std::cout << "Starting Linked List Operations:" << std::endl;
 
     head = new Node(4);
@@ -143,4 +179,6 @@ void LinkedLists::LinkedListsMainLoop()
     }
 
     std::cout << "Linked list memory has been freed." << std::endl;
+    std::cout << "End linked list operations" << std::endl;
+    std::cout << "------------------------------------------" <<std::endl;
 }

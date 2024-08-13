@@ -1,5 +1,12 @@
 #include "Headers/Arrays.hpp"
 
+/*
+    @brief iterates through an array and outputs the data
+           of each index
+
+    @param arr: array to iterate over
+    @param size: size of the array
+*/
 template <typename T>
 void Arrays::Traversal(T* arr, size_t size)
 {
@@ -11,10 +18,18 @@ void Arrays::Traversal(T* arr, size_t size)
     std::cout << std::endl;
 }
 
+/*
+    @brief inserts a new element into an array at desired position
+
+    @param arr: array to iterate over
+    @param size: size of the array
+    @param x: value to be inserted into the array
+    @param pos: index of where to insert new element
+*/
 template <typename T>
-void Arrays::InsertElement(T* arr, int n, int x, int pos)
+void Arrays::InsertElement(T* arr, size_t size, int x, int pos)
 {
-    for(int i = n - 1; i >= pos; i--)
+    for(int i = size - 1; i >= pos; i--)
     {
         arr[i + 1] = arr[i];
     }
@@ -22,6 +37,13 @@ void Arrays::InsertElement(T* arr, int n, int x, int pos)
     arr[pos] = x;
 }
 
+/*
+    @brief Deletes an element from a given array
+
+    @param arr: array to iterate over
+    @param size: size of the array
+    @param pos: index of where to insert new element
+*/
 template <typename T>
 int Arrays::DeleteElement(T* arr, size_t size, int pos)
 {
@@ -43,7 +65,15 @@ int Arrays::DeleteElement(T* arr, size_t size, int pos)
     return size;
 }
 
+/*
+    @brief finds an element in an array based on an elements value
 
+    @param arr: array to iterate over
+    @param size: size of the array
+    @param key: value to match in the given array
+
+    @returns index of array with matching key pair
+*/
 template <typename T>
 int Arrays::FindElement(T* arr, size_t size, int key)
 {
@@ -56,8 +86,15 @@ int Arrays::FindElement(T* arr, size_t size, int key)
     return -1;
 }
 
+/*
+    @brief Sample program to test and display how various 
+           array operations work
+*/
 void Arrays::ArraysMainLoop()
 {
+    std::cout << "------------------------------------------" <<std::endl;
+    std::cout << "Starting Array Operations:" << std::endl;
+
     int array1[] = {1,2,3,4,5};
     size_t array1Size = sizeof(array1) / sizeof(array1[0]);
 
@@ -70,8 +107,9 @@ void Arrays::ArraysMainLoop()
     std::cout << "New Array Traversal..." << std::endl;
     Traversal(array1, array1Size + 1);
 
-    int element = FindElement(array1, array1Size, 2);
-    std::cout << "Index with value the value 2: " << " at index " << element << std::endl;
+    int key = 2;
+    int element = FindElement(array1, array1Size, key);
+    std::cout << "Found the value " << key << " at index " << element << std::endl;
     
     std::cout << "Before deletion..." << std::endl;
     for(int i = 0; i < array1Size; i++)
@@ -79,13 +117,16 @@ void Arrays::ArraysMainLoop()
         std::cout << array1[i] << " ";
     }
 
-    int deleteElementAt = 3;    // Index 3
+    int deleteElementAt = 3; 
     std::cout << "\nAfter deletion..." << std::endl;
     array1Size = DeleteElement(array1, array1Size, deleteElementAt);
+
     for(int i = 0; i < array1Size; i++)
     {
         std::cout << array1[i] << " ";
     }
 
-    std::cout << std::endl;
+     std::cout << "\nEnd array operations" << std::endl;
+     std::cout << "------------------------------------------" <<std::endl;
+     
 }
