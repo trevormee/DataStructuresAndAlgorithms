@@ -3,20 +3,24 @@
 #include "LinkedLists.cpp"
 #include "Stacks.cpp"
 #include "Queues.cpp"
+#include "BinarySearchTree.cpp"
 
 int main()
 {
     Arrays a;
-    a.ArraysMainLoop();
+    //a.ArraysMainLoop();
 
     LinkedLists ll;
-    ll.LinkedListsMainLoop();
+//ll.LinkedListsMainLoop();
 
     Stacks s;
-    s.StackMainLoop();
+   // s.StackMainLoop();
 
     Queues q;
-    q.QueueMainLoop();
+    //q.QueueMainLoop();
+
+    BinarySearchTree bst;
+    bst.BSTMainLoop();
 
     return 0;
 }
