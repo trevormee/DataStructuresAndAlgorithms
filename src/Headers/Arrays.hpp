@@ -18,7 +18,7 @@ public:
 
     // Insertion
     template <typename T>
-    void InsertElement(T* arr, int n, int x, int pos);
+    void InsertElement(T* arr, size_t size, int x, int pos);
 
     // Deletion
     template <typename T>
@@ -30,6 +30,5 @@ public:
 
     // Main Loop to run array operations
     void ArraysMainLoop();
-
 };
 #endif
