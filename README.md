@@ -7,3 +7,4 @@ The purpose of this project is to be used as a template for various data structu
 - Arrays
 - Linked Lists
 - Stacks
+- Queues
