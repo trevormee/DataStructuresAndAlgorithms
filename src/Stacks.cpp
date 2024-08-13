@@ -61,6 +61,7 @@ int Stacks::Pop(Node** root)
 /*
     @brief Grabs first node in stack
     @param root: root node
+    @returns first element in stack
 */
 int Stacks::Peek(Node* root)
 {
@@ -101,7 +102,7 @@ void Stacks::StackMainLoop()
     std::cout << "Starting Stack Operations:" << std::endl;
 
     Node* root = NULL;
-    std::cout << "Pusing new elements into stack..." << std::endl;
+    std::cout << "Pushing new elements into stack..." << std::endl;
     Push(&root, 1);
     Push(&root, 2);
     Push(&root, 3);

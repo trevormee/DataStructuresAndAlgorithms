@@ -2,7 +2,6 @@
 #define STACKS_HPP
 
 #include "Node.hpp"
-#include <iostream>
 
 class Stacks
 {

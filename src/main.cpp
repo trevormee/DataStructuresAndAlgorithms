@@ -2,6 +2,7 @@
 #include "Arrays.cpp"
 #include "LinkedLists.cpp"
 #include "Stacks.cpp"
+#include "Queues.cpp"
 
 int main()
 {
@@ -13,6 +14,9 @@ int main()
 
     Stacks s;
     s.StackMainLoop();
+
+    Queues q;
+    q.QueueMainLoop();
 
     return 0;
 }
