@@ -91,6 +91,10 @@ void Stacks::Traversal(Node* root)
     std::cout << std::endl;
 }
 
+/*
+    @brief Sample program to test and display how various 
+           Stack operations work
+*/
 void Stacks::StackMainLoop()
 {
     std::cout << "\n------------------------------------------" <<std::endl;
