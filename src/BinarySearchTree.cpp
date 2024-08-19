@@ -4,6 +4,8 @@
     @brief inserts a new node into a BST 
     @param node: node to be inserted into tree
     @param key: 
+
+    @returns new node to be inserted
 */
 BSTNode* BinarySearchTree::Insert(BSTNode* node, int key)
 {
@@ -30,9 +32,21 @@ BSTNode* BinarySearchTree::Insert(BSTNode* node, int key)
 }
 
 
-BSTNode* BinarySearchTree::Search(BSTNode* root, int key)
+BSTNode* BinarySearchTree::Search(BSTNode* root, int val)
 {
-    return root;
+    while(root != nullptr)
+    {
+        if(root -> key == val){
+            return root;
+        }else if (root -> key < val)
+        {
+            root = root -> right;
+        }else{
+            root = root -> left;
+        }
+    }
+    
+    return nullptr; // node DNE in BST
 }
 
 /*
@@ -42,11 +56,32 @@ BSTNode* BinarySearchTree::Search(BSTNode* root, int key)
 
     @returns deleted node
 */
-BSTNode* BinarySearchTree::Delete(BSTNode* node, int key)
-{
+void BinarySearchTree::Delete(BSTNode* node, int val)
+{ 
+    /*
+    if(node == NULL)
+        return node;
 
-    
-    return node;
+    if(node -> key > val)   // move left
+        node -> left = Delete(node -> left, val);
+    else if(node -> key < val)  // move right
+        node -> right = Delete(node -> right, val);
+    else{   // key matches value
+
+        // Case 1: Deleting a leaf node (no children)
+        if(node -> left && node -> right == NULL)
+        {
+            delete node;
+        }
+
+        // Case 2: Single Child Node
+        if(node -> left != NULL && node -> right == NULL)
+        {
+            
+        }
+
+    }
+    */
 }
         
 /* 
@@ -115,6 +150,19 @@ void BinarySearchTree::BSTMainLoop()
 
     std::cout << "\nPost order traversal..." << std::endl;
     PostOrderTraversal(root);
+
+    int searchKey = 150;
+    BSTNode* searchResult = Search(root, searchKey);
+    if (searchResult != nullptr) {
+        std::cout << "\nNode with key " << searchKey << " found in the BST." << std::endl;
+    } else {
+        std::cout << "\nNode with key " << searchKey << " not found in the BST." << std::endl;
+    }
+
+    Delete(root, searchKey);
+
+    std::cout << "In order traversal after deletion..." << std::endl;
+    InOrderTraversal(root);
     
     std::cout << "\nEnd BST operations" << std::endl;
     std::cout << "------------------------------------------" <<std::endl;

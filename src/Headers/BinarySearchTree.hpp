@@ -18,10 +18,10 @@ class BinarySearchTree
         BSTNode* Insert(BSTNode* node, int key);
 
         // Searching
-        BSTNode* Search(BSTNode* root, int key);
+        BSTNode* Search(BSTNode* root, int val);
 
         // Deletion
-        BSTNode* Delete(BSTNode* node, int key);
+        void Delete(BSTNode* node, int val);
 
         // Traversal (in order)
         void InOrderTraversal(BSTNode* node);

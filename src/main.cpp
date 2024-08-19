@@ -8,16 +8,16 @@
 int main()
 {
     Arrays a;
-    //a.ArraysMainLoop();
+    a.ArraysMainLoop();
 
     LinkedLists ll;
-//ll.LinkedListsMainLoop();
+    ll.LinkedListsMainLoop();
 
     Stacks s;
-   // s.StackMainLoop();
+    s.StackMainLoop();
 
     Queues q;
-    //q.QueueMainLoop();
+    q.QueueMainLoop();
 
     BinarySearchTree bst;
     bst.BSTMainLoop();
