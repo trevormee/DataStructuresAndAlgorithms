@@ -3,6 +3,7 @@
 #include "LinkedLists.cpp"
 #include "Stacks.cpp"
 #include "Queues.cpp"
+#include "BinarySearchTree.cpp"
 
 int main()
 {
@@ -17,6 +18,9 @@ int main()
 
     Queues q;
     q.QueueMainLoop();
+
+    BinarySearchTree bst;
+    bst.BSTMainLoop();
 
     return 0;
 }
